@@ -8,27 +8,39 @@
 import UIKit
 
 class MoviesListViewController: UIViewController {
+    
     @IBOutlet private weak var tableView: UITableView!
     private let viewModel = MovieViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        tableView.delegate = self
+        tableView.dataSource = self
         setUpBinding()
     }
     
     private func setUpBinding(){
-        //create the binding of movies
         
-        viewModel.moviesBinding = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
-        
+        viewModel.delegate = self
         viewModel.fetchMovies()
     }
 }
+
+extension MoviesListViewController: MovieViewModelDelegate{
+    func displayMovies() {
+        DispatchQueue.main.async { [ unowned self] in
+            self.tableView.reloadData()
+        }
+    }
+    
+    func displayError(message: String) {
+        DispatchQueue.main.async { [ unowned self] in
+            self.displayError(message: message)
+        }
+    }
+}
+
 extension MoviesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,11 +59,13 @@ extension MoviesListViewController: UITableViewDataSource {
         return cell
     }
 }
-extension MoviesListViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
-    }
-}
+
+//extension MoviesListViewController: UITableViewDelegate{
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100.0
+//    }
+//}
+
 
 
 

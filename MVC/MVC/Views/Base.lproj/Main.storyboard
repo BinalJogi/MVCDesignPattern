@@ -34,20 +34,21 @@
                                                         <constraint firstAttribute="height" constant="75" id="ZGG-34-1pl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5N-dv-aNi">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5N-dv-aNi">
                                                     <rect key="frame" x="103" y="11" width="281.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-uR-5DX">
-                                                    <rect key="frame" x="103" y="32" width="273" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-uR-5DX">
+                                                    <rect key="frame" x="103" y="32" width="273" height="49"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sd3-uR-5DX" secondAttribute="bottom" constant="8" id="3fN-Ks-aUe"/>
                                                 <constraint firstItem="sd3-uR-5DX" firstAttribute="leading" secondItem="U5N-dv-aNi" secondAttribute="leading" id="FAh-Yg-Y8P"/>
                                                 <constraint firstItem="U5N-dv-aNi" firstAttribute="leading" secondItem="pSo-W2-4bf" secondAttribute="trailing" constant="8" id="Iih-oD-Egh"/>
                                                 <constraint firstItem="U5N-dv-aNi" firstAttribute="top" secondItem="NdK-sh-IuB" secondAttribute="top" constant="11" id="Mnv-Jv-SFO"/>

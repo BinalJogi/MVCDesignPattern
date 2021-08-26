@@ -6,15 +6,19 @@
 //
 
 import Foundation
-protocol movieDelegate {
-    func getMovie()
+
+protocol MovieViewModelDelegate: AnyObject {
+    func displayMovies()
+    func displayError(message: String)
 }
+
+
 class MovieViewModel{
     
     //communication between ViewModel and View = Can be done by using closure, delegate and protocol
     
     //MARK:- internal properties
-    var moviesBinding: (()-> Void)?
+    weak var delegate: MovieViewModelDelegate? //Assigning a nil value so we are uisng optional(?)
     var count: Int { movies.count }
     func getTitle(at row: Int)-> String { movies[row].originalTitle }
     func getOverview(at row: Int)-> String { movies[row].overview}
@@ -32,9 +36,9 @@ class MovieViewModel{
             switch result {
             case .success(let movies):
                 self?.movies = movies
-                self?.moviesBinding?()
+                self?.delegate?.displayMovies()
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.delegate?.displayError(message: error.localizedDescription)
             }
         }
             
