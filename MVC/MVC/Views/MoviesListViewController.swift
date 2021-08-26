@@ -15,7 +15,7 @@ class MoviesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         setUpBinding()
     }
@@ -60,11 +60,11 @@ extension MoviesListViewController: UITableViewDataSource {
     }
 }
 
-//extension MoviesListViewController: UITableViewDelegate{
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100.0
-//    }
-//}
+extension MoviesListViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+}
 
 
 
